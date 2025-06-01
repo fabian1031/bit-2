@@ -52,21 +52,23 @@
                         </li>
                         <li class="nav-item"><a class="nav-link disabled">Disabled</a></li>
                     </ul>
-                    <form class="d-flex" role="search">
+                    <!-- Formulario con id para buscar -->
+                    <form id="form-busqueda" class="d-flex" role="search" onsubmit="return false;">
                         <input
+                            id="input-busqueda"
                             class="form-control me-2"
                             type="search"
-                            placeholder="Search"
-                            aria-label="Search"
+                            placeholder="Buscar estudiantes"
+                            aria-label="Buscar estudiantes"
                         />
-                        <button class="btn btn-outline-success" type="submit">Search</button>
+                        <button class="btn btn-outline-success" type="submit">Buscar</button>
                     </form>
                 </div>
             </div>
         </nav>
     </header>
 
-    <main class="container-fluid">
+    <main class="container py-4">
         <div id="lista-estudiantes" style="margin-bottom: 2rem;"></div>
     </main>
 
