@@ -1,137 +1,154 @@
+/* === Estructura base para que footer se quede abajo === */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  background-color: #f8f9fa; /* Fondo suave */
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--color-fondo);
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: #333;
 }
 
-/* Secciones intensidades */
-section h3 {
-  font-weight: 700;
-  font-size: 1.8rem;
-  margin-bottom: 2rem;
-  padding-bottom: 0.5rem;
-  border-bottom-style: solid;
-  border-bottom-width: 4px;
-  border-radius: 2px;
-  transition: color 0.3s ease;
+main {
+  flex: 1 0 auto;
 }
 
-/* Colores personalizados para títulos por intensidad */
-.seccion-100 h3 {
-  color: #198754;
-  border-color: #198754;
-}
-.seccion-300 h3 {
-  color: #fd7e14;
-  border-color: #fd7e14;
-}
-.seccion-400 h3 {
-  color: #dc3545;
-  border-color: #dc3545;
+footer {
+  flex-shrink: 0;
 }
 
-/* Tarjeta */
-.card-custom {
-  border-radius: 20px;
-  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  background-color: #ffffff;
-  border: none;
+/* === Variables de colores === */
+:root {
+  --color-primario: #52357B;
+  --color-secundario: #5459AC;
+  --color-acento: #648DB3;
+  --color-fondo: #B2D8CE;
+  --color-blanco: #ffffff;
 }
 
-.card-custom:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 25px rgba(0,0,0,0.15);
+/* === Navbar personalizado === */
+.navbar {
+  background-color: var(--color-primario) !important;
 }
 
-/* Avatar */
-.avatar-img {
-  max-width: 90px;
-  border-radius: 50%;
-  border: 3px solid #ddd;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-  transition: box-shadow 0.3s ease;
+.navbar-brand,
+.nav-link,
+.navbar-toggler-icon {
+  color: var(--color-blanco) !important;
 }
 
-.card-custom:hover .avatar-img {
-  box-shadow: 0 6px 15px rgba(25, 135, 84, 0.5); /* verde suave */
+.nav-link:hover,
+.navbar-brand:hover {
+  color: var(--color-acento) !important;
 }
 
-/* Nombre del estudiante */
-.card-title {
-  color: #0d6efd; /* Bootstrap primary */
-  font-weight: 700;
-  font-size: 1.4rem;
-  margin-bottom: 0.5rem;
+/* Botón de búsqueda en Navbar */
+.btn-outline-success {
+  color: var(--color-blanco);
+  border-color: var(--color-acento);
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
-/* Código y otros textos secundarios */
-.text-secondary {
-  font-style: italic;
-  font-size: 0.9rem;
+.btn-outline-success:hover {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
 }
 
-/* Intensidad dentro de tarjeta */
-.intensity-badge {
-  font-weight: 600;
-  font-size: 0.95rem;
-  padding: 0.2rem 0.6rem;
+/* === Títulos para grupos de intensidad === */
+h3 {
+  color: var(--color-primario);
+  border-left: 5px solid var(--color-acento);
+  padding-left: 0.5rem;
+}
+
+/* === Estilos para las tarjetas de estudiantes === */
+.card {
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-blanco);
   border-radius: 12px;
-  color: white;
-  display: inline-block;
-  margin-bottom: 0.8rem;
-}
-
-/* Colores de badges */
-.intensity-100 {
-  background-color: #198754;
-}
-
-.intensity-300 {
-  background-color: #fd7e14;
-}
-
-.intensity-400 {
-  background-color: #dc3545;
-}
-
-/* Botón */
-.btn-custom {
-  background-color: #0d6efd;
   border: none;
-  color: white;
-  font-weight: 600;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card-title {
+  color: var(--color-secundario);
+}
+
+/* Botón dentro de las tarjetas */
+.card .btn-primary {
+  background-color: var(--color-secundario);
+  border: none;
   transition: background-color 0.3s ease;
 }
 
-.btn-custom:hover, .btn-custom:focus {
-  background-color: #0b5ed7;
-  color: white;
-  box-shadow: 0 0 8px rgba(13, 110, 253, 0.6);
+.card .btn-primary:hover {
+  background-color: var(--color-acento);
 }
 
-/* Proyectos texto */
-.project-label strong {
-  color: #333;
+/* === Footer estilizado === */
+footer {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  padding: 2rem 1rem;
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 0.9rem;
 }
 
-.project-score {
-  color: #6c757d; /* bootstrap text-muted */
-  font-style: normal;
+footer a {
+  color: var(--color-acento);
+  text-decoration: none;
+  transition: text-decoration 0.3s ease;
 }
 
-/* Contenedor de proyectos */
-.project-item {
-  margin-bottom: 0.8rem;
+footer a:hover {
+  text-decoration: underline;
 }
 
-/* Responsive */
-@media (max-width: 767px) {
-  .card-title {
-    font-size: 1.2rem;
-  }
+/* === Estilos para contenedor de tarjetas === */
+#lista-estudiantes .d-flex {
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
 }
-.col-md-6 {
-  flex: 0 0 auto;
-  width: 50%;
+
+/* === Icono flecha rotada cuando el botón está expandido === */
+.btn[aria-expanded="true"] i.bi-chevron-down {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
+}
+/* Botones desplegables personalizados */
+.btn-collapse {
+  background-color: var(--color-acento);
+  color: var(--color-blanco);
+  border: 2px solid var(--color-secundario);
+  font-weight: 600;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-collapse:hover,
+.btn-collapse:focus {
+  background-color: var(--color-secundario);
+  border-color: var(--color-primario);
+  color: var(--color-blanco);
+}
+
+/* Icono dentro del botón collapse */
+.btn-collapse i.bi-chevron-down {
+  transition: transform 0.3s ease;
+}
+
+.btn-collapse[aria-expanded="true"] i.bi-chevron-down {
+  transform: rotate(180deg);
 }
