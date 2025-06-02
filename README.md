@@ -2,7 +2,7 @@
 
 ## Autor
 
-**Fabián Beltrán**
+**[Fabián Beltrán](https://github.com/fabian)**
 
 ---
 
